@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  width: 400px
+  ;
+}
+
+#event-description{
+  display:inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+max-width: 50ch;
+}

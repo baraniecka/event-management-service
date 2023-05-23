@@ -1,0 +1,12 @@
+<body>
+  <tbody>
+    <tr *ngFor="let event of events">
+      <td>{{ event.title }}</td>
+      <td>{{ event.startDate }}</td>
+      <td>{{ event.endDate }}</td>
+      <td>
+        <span id="event-description">{{ event.description }}</span>
+      </td>
+    </tr>
+  </tbody>
+</body>

@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface IEventRepository extends JpaRepository<Event, Long> {
 
-    @Query(value = "FROM Event e WHERE e.endDate > :dateNow")
+    @Query(value = "FROM Event e WHERE e.endDate > :dateNow ORDER BY e.startDate")
     List<Event> findAllActualEvents(@Param("dateNow") LocalDate date);
 
 }

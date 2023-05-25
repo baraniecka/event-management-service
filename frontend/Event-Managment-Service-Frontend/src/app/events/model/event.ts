@@ -1,6 +1,6 @@
-export interface Event{
+export interface Event {
   title: string;
-  startDate : Date;
+  startDate: Date;
   endDate: Date;
-  description: string
+  description: string;
 }

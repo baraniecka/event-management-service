@@ -1,12 +1,11 @@
 <body>
-  <tbody>
-    <tr *ngFor="let event of events">
-      <td>{{ event.title }}</td>
-      <td>{{ event.startDate }}</td>
-      <td>{{ event.endDate }}</td>
-      <td>
-        <span id="event-description">{{ event.description }}</span>
-      </td>
-    </tr>
-  </tbody>
+  <ul *ngFor="let actualEvent of events">
+    <li id="event-title">
+      {{ actualEvent.title }}
+    </li>
+    <li>{{ actualEvent.startDate }} - {{ actualEvent.endDate }}</li>
+    <li id="event-description">
+      {{ actualEvent.description }}
+    </li>
+  </ul>
 </body>

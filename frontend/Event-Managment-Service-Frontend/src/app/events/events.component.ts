@@ -7,18 +7,18 @@ import { Event } from './model/event';
   templateUrl: './events.component.html',
   styleUrls: ['./events.component.scss'],
 })
-export class EventsComponent {
+export class EventsComponent implements OnInit {
   events: Event[];
 
   constructor(private eventService: EventsService) {}
 
-  getActualEvents(): void {
+  findActualEvents(): void {
     this.eventService
       .getActualEvents()
       .subscribe((events) => (this.events = events));
   }
 
   ngOnInit(): void {
-    this.getActualEvents();
+    this.findActualEvents();
   }
 }

@@ -1,15 +1,18 @@
 ul {
-  display: flex;
   list-style: none;
   padding: 0;
-  width: 400px
-  ;
+  width: 400px;
 }
 
-#event-description{
-  display:inline-block;
+#event-description {
+  display: inline-block;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-max-width: 50ch;
+  max-width: 50ch;
+}
+
+#event-title {
+  font-size: large;
+  font-weight: bold;
 }

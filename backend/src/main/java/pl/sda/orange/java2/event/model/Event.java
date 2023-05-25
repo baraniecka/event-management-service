@@ -23,4 +23,10 @@ public class Event {
     private String description;
 
 
+    public Event(String title, LocalDate startDate, LocalDate endDate, String description) {
+        this.title = title;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.description = description;
+    }
 }

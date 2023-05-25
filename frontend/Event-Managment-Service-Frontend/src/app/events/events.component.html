@@ -1,0 +1,11 @@
+<body>
+  <ul *ngFor="let actualEvent of events">
+    <li id="event-title">
+      {{ actualEvent.title }}
+    </li>
+    <li>{{ actualEvent.startDate }} - {{ actualEvent.endDate }}</li>
+    <li id="event-description">
+      {{ actualEvent.description }}
+    </li>
+  </ul>
+</body>

@@ -9,6 +9,7 @@ import { Event } from './model/event';
 })
 export class EventsComponent implements OnInit {
   events: Event[];
+  singleEvent: Event;
 
   constructor(private eventService: EventsService) {}
 

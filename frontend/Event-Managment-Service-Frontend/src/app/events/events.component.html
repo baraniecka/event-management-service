@@ -1,10 +1,12 @@
 <body>
   <ul *ngFor="let actualEvent of events">
     <li id="event-title">
-      {{ actualEvent.title }}
+      <a routerLink="/event/{{ actualEvent.id }}">
+        {{ actualEvent.title }}
+      </a>
     </li>
     <li>{{ actualEvent.startDate }} - {{ actualEvent.endDate }}</li>
-    <li id="event-description">
+    <li class="event-description" id="event-desc-short">
       {{ actualEvent.description }}
     </li>
   </ul>

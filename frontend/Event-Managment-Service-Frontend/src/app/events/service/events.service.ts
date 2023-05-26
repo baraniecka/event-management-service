@@ -14,4 +14,8 @@ export class EventsService {
   public getActualEvents(): Observable<any> {
     return this.httpClient.get<Event[]>(`${this.url}/events`);
   }
+
+  public getSingleEvent(id: number) {
+    return this.httpClient.get<Event>(`${this.url}/${id}`);
+  }
 }

@@ -12,9 +12,12 @@ public class EventExceptionHandler {
     @ExceptionHandler(NoSuchEventException.class)
     public ResponseEntity noSuchEventExceptionHandler(NoSuchEventException nse){
 
+        ErrorDto errorDto = new ErrorDto();
+        errorDto.setMessage(nse.getMessage());
+
         return ResponseEntity
                 .status(404)
-                .body(nse.getMessage());
+                .body(errorDto);
     }
 
 }

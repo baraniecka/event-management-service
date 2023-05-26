@@ -6,6 +6,7 @@ import pl.sda.orange.java2.event.model.Event;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 @RequiredArgsConstructor
@@ -17,6 +18,10 @@ public class EventRepository {
     public List<Event> findAllActualEvents(){
         LocalDate actualDate = LocalDate.now();
        return repository.findAllActualEvents(actualDate);
+    }
+
+    public Optional<Event> getEvent(Long id){
+        return repository.findById(id);
     }
 
 }

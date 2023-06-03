@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SingleEventComponent } from './single-event/single-event.component';
 import { CreateEventComponent } from './create-event/create-event.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { CreateEventComponent } from './create-event/create-event.component';
     EventsComponent,
     SingleEventComponent,
     CreateEventComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

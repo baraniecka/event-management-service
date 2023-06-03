@@ -2,7 +2,7 @@ package pl.sda.orange.java2.event.repository;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
-import pl.sda.orange.java2.event.model.Event;
+import pl.sda.orange.java2.event.entity.Event;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -24,4 +24,7 @@ public class EventRepository {
         return repository.findById(id);
     }
 
+    public Event addEvent(Event event){
+        return repository.save(event);
+    }
 }

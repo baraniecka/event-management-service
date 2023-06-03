@@ -1,15 +1,19 @@
-package pl.sda.orange.java2.event.model;
+package pl.sda.orange.java2.event.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.FutureOrPresent;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.Length;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 @Entity
 @Data
-@NoArgsConstructor
+@NoArgsConstructor(force = true)
 @AllArgsConstructor
 @Table(name = "events")
 public class Event {
@@ -17,10 +21,26 @@ public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @NotBlank
     private String title;
+
+
+    @FutureOrPresent
     private LocalDate startDate;
+
+    @FutureOrPresent
     private LocalDate endDate;
+
+    @Length(min = 20)
     private String description;
+
+    @ManyToOne
+    @JoinColumn(name = "host_id")
+    private User host;
+
+    @ManyToMany(mappedBy = "userEvents")
+    private Set<User> attendees;
 
 
     public Event(String title, LocalDate startDate, LocalDate endDate, String description) {

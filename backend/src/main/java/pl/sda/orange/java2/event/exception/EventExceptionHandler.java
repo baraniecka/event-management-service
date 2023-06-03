@@ -20,4 +20,14 @@ public class EventExceptionHandler {
                 .body(errorDto);
     }
 
+    @ExceptionHandler(NoUserFoundException.class)
+    public ResponseEntity noUserFoundHandler(NoUserFoundException nuf){
+        ErrorDto errorDto = new ErrorDto();
+        errorDto.setMessage(nuf.getMessage());
+
+        return ResponseEntity
+                .status(404)
+                .body(errorDto);
+    }
+
 }

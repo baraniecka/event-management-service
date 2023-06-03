@@ -7,9 +7,10 @@ import { EventsComponent } from './events/events.component';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
-  declarations: [AppComponent, EventsComponent],
+  declarations: [AppComponent, EventsComponent, LoginComponent],
   imports: [
     BrowserModule,
     HttpClientModule,

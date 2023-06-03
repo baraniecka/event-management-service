@@ -1,7 +1,7 @@
 <body>
   <ul *ngFor="let actualEvent of events">
     <li id="event-title">
-      <a routerLink="/event/{{ actualEvent.id }}">
+      <a routerLink="/event/show/{{ actualEvent.id }}">
         {{ actualEvent.title }}
       </a>
     </li>

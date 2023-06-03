@@ -7,10 +7,15 @@ import { EventsComponent } from './events/events.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SingleEventComponent } from './single-event/single-event.component';
-import { provideRouter } from '@angular/router';
+import { CreateEventComponent } from './create-event/create-event.component';
 
 @NgModule({
-  declarations: [AppComponent, EventsComponent, SingleEventComponent],
+  declarations: [
+    AppComponent,
+    EventsComponent,
+    SingleEventComponent,
+    CreateEventComponent,
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,

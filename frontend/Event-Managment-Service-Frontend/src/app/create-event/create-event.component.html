@@ -1,0 +1,31 @@
+<!-- <form method="post"> -->
+<form>
+  <label for="title">Title</label>
+  <input type="text" name="title" placeholder="Title" #title />
+
+  <label for="start-date">Start date</label>
+  <input type="date" name="start-date" #start />
+
+  <label for="end-date">End date</label>
+  <input type="date" name="end-date" #end />
+
+  <label for="description">Description</label>
+  <input
+    type="text"
+    name="description"
+    placeholder="Write event description"
+    #desc
+  />
+
+  <button
+    (click)="
+      addEvent(title.value, start.valueAsDate, end.valueAsDate, desc.value);
+      title.value = '';
+      start.value = '';
+      end.value = '';
+      desc.value = ''
+    "
+  >
+    Submit
+  </button>
+</form>

@@ -2,7 +2,7 @@
 Final project for _Java from scratch_ bootcamp
 
 ___
-## Intruduction
+## Introduction
 
 Event Management System is a web application for managing events - system allows
 to create, view, comment and search events. It also provides User database. Users can 

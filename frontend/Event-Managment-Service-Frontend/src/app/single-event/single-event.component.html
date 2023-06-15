@@ -1,3 +1,9 @@
+<h1><a routerLink="/events" id="homepage">EVENTS</a></h1>
+<div>
+  <a routerLink="/login">Login</a>
+  <a routerLink="/register">Sign up</a>
+</div>
+
 <div id="single-event">
   <h1>{{ event.title }}</h1>
   <p>Starts: {{ event.startDate }}</p>
@@ -5,6 +11,8 @@
   <p class="event-description">{{ event.description }}</p>
 </div>
 <div id="event-buttons">
-  <button id="attend-button">Attend</button>
+<!--if registered -->
+<!--if not -> redirect to login page/register-->
+  <button id="default-button">Attend</button>
   <a routerLink="/events" id="go-back-button">Back</a>
 </div>

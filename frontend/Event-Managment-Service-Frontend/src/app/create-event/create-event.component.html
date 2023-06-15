@@ -1,13 +1,13 @@
-<!-- <form method="post"> -->
+<h1><a routerLink="/events" id="homepage">EVENTS</a></h1>
 <form>
   <label for="title">Title</label>
-  <input type="text" name="title" placeholder="Title" #title />
+  <input type="text" name="title" placeholder="Title" #title required="required"/>
 
   <label for="start-date">Start date</label>
-  <input type="date" name="start-date" #start />
+  <input type="date" name="start-date" #start required="required" />
 
   <label for="end-date">End date</label>
-  <input type="date" name="end-date" #end />
+  <input type="date" name="end-date" #end required="required"/>
 
   <label for="description">Description</label>
   <input
@@ -15,6 +15,7 @@
     name="description"
     placeholder="Write event description"
     #desc
+    required="required"
   />
 
   <button
@@ -29,3 +30,4 @@
     Submit
   </button>
 </form>
+<button (click)="back()">Back</button>

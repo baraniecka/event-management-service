@@ -1,6 +1,7 @@
 import { EventsService } from './../service/events.service';
 import { Component } from '@angular/core';
-import {Event, EventData} from '../model/event';
+import {EventData} from '../model/event';
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-create-event',
@@ -8,7 +9,8 @@ import {Event, EventData} from '../model/event';
   styleUrls: ['./create-event.component.scss'],
 })
 export class CreateEventComponent {
-  constructor(private eventService: EventsService) {}
+  constructor(private eventService: EventsService,
+              private location: Location) {}
 
   // event: Event;
 
@@ -24,5 +26,9 @@ export class CreateEventComponent {
     };
 
     this.eventService.addEvent(event).subscribe();
+  }
+
+  back(): void {
+    this.location.back()
   }
 }

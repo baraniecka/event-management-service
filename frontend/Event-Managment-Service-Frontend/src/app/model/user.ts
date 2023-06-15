@@ -4,3 +4,9 @@ export interface User {
   password: string;
   username: string;
 }
+
+export interface UserData{
+  email: string;
+  password: string;
+  username: string;
+}

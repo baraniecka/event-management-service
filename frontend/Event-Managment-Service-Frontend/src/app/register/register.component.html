@@ -1,0 +1,36 @@
+<h1><a routerLink="/events" id="homepage">EVENTS</a></h1>
+<form #registration = "ngForm" (ngSubmit) = "onClickSubmit(registration.value)">
+  <ul>
+    <li>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required maxlength="50"
+      placeholder="username" ngModel/>
+
+<!--      <div *ngIf="username.invalid && (username.dirty || username.touched)"-->
+<!--      class="alert">-->
+
+<!--      <div *ngIf="user.username.errors?.['required']">Username is required *</div>-->
+
+<!--      <div *ngIf="name.errors?.['required']">Username is required *</div>-->
+<!--      </div>-->
+    </li>
+    <li>
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" placeholder="email" required ngModel/>
+    </li>
+    <li>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" placeholder="password" required minlength="8" maxlength="30" ngModel/>
+    </li>
+    <li>
+      <label for="repeatPassword">Repeat password:</label>
+      <input type="password" id="repeatPassword" name="repeatPassword" placeholder="repeat password"/>
+    </li>
+    <li>
+      <input type="submit" value="Register" />
+    </li>
+  </ul>
+
+
+<button (click)="back()">Back</button>
+</form>

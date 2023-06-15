@@ -7,10 +7,13 @@ import pl.sda.orange.java2.event.entity.Event;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 public interface IEventRepository extends JpaRepository<Event, Long> {
 
     @Query(value = "FROM Event e WHERE e.endDate > :dateNow ORDER BY e.startDate")
     List<Event> findAllActualEvents(@Param("dateNow") LocalDate date);
+
+    Optional<Event> findEventByTitleAndStartDate(String title, LocalDate start);
 
 }

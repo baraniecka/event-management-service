@@ -19,5 +19,15 @@ public class UserRepository {
     public User addUser(User user){
         return repository.save(user);
     }
+
+    public Optional<User> getUserByEmail(String email) {
+
+        return repository.findUserByEmail(email);
+
+    }
+
+    public User getAdmin() {
+        return repository.findUserByUsername("admin");
+    }
 }
 

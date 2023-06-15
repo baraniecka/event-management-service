@@ -20,11 +20,16 @@ public class EventRepository {
        return repository.findAllActualEvents(actualDate);
     }
 
-    public Optional<Event> getEvent(Long id){
+    public Optional<Event> getEventById(Long id){
         return repository.findById(id);
     }
 
     public Event addEvent(Event event){
         return repository.save(event);
     }
+
+    public Optional<Event> getEventByTitleAndStartDate(String title, LocalDate start){
+        return repository.findEventByTitleAndStartDate(title, start);
+    }
+
 }

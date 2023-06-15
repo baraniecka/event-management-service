@@ -35,11 +35,11 @@ public class Event {
     @Length(min = 20)
     private String description;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "host_id")
     private User host;
 
-    @ManyToMany(mappedBy = "userEvents")
+    @ManyToMany(mappedBy = "userEvents", fetch = FetchType.LAZY)
     private Set<User> attendees;
 
 

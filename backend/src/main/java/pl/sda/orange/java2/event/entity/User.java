@@ -25,21 +25,19 @@ public class User {
     @Email
     private String email;
 
-    @Length(min = 8, max = 30)
     private String password;
 
     @NotBlank
-    @Length(max=50)
+    @Length(max = 50)
     private String username;
 
     @Enumerated(EnumType.STRING)
-    private Role role;
+    private Role role = Role.REGULAR_USER;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "host")
+    @OneToMany(mappedBy = "host", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     private Set<Event> hostedEvents;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "event_attendees",
             joinColumns = {
@@ -50,16 +48,27 @@ public class User {
     )
     private Set<Event> userEvents;
 
-    public User(String email, String password, String username, Role role){
+
+    public User(Long id, String email, String password, String username, Role role) {
+        this.id = id;
         this.email = email;
         this.password = password;
         this.username = username;
-        this.role = Role.REGULAR_USER;
+        this.role = role;
     }
 
-    public User(String email, String password, String username){
+    public User(String email, String password, String username, Role role) {
+        this.email = email;
+        this.password = password;
+        this.username = username;
+    }
+
+    public User(String email, String password, String username) {
         this.email = email;
         this.password = password;
         this.username = username;
     }
 }
+
+//http basic
+//token

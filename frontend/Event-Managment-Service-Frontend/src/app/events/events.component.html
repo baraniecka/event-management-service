@@ -1,4 +1,11 @@
 <body>
+ <h1>EVENTS</h1>
+<div>
+  <a routerLink="/login">Login</a>
+  <a routerLink="/register">Sign up</a>
+</div>
+
+
   <ul *ngFor="let actualEvent of events">
     <li id="event-title">
       <a routerLink="/event/show/{{ actualEvent.id }}">

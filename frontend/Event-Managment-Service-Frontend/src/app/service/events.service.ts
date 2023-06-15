@@ -9,7 +9,7 @@ import {Event, EventData} from '../model/event';
 export class EventsService {
   constructor(private httpClient: HttpClient) {}
 
-  private readonly url: string = 'http://localhost:8080/api/event';
+  private readonly url: string = 'http://localhost:8080/api';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -20,10 +20,10 @@ export class EventsService {
   }
 
   public getSingleEvent(id: number) {
-    return this.httpClient.get<Event>(`${this.url}/${id}`);
+    return this.httpClient.get<Event>(`${this.url}/event/${id}`);
   }
 
   public addEvent(event: EventData): Observable<EventData> {
-    return this.httpClient.post<Event>(this.url, event, this.httpOptions);
+    return this.httpClient.post<Event>(`${this.url}/event`, event, this.httpOptions);
   }
 }

@@ -1,18 +1,18 @@
 <body>
  <h1>EVENTS</h1>
  <hr>
-<ul>
-  <li>
-  <a routerLink="/login">Login</a>
+<ul class="start">
+  <li class="login">
+  <a routerLink="/login">login</a>
 </li>
-<li>
-  <a routerLink="/register">Sign up</a>
+<li class="register">
+  <a routerLink="/register">sign up</a>
 </li>
 </ul>
 
 
-  <ul *ngFor="let actualEvent of events">
-    <li id="event-title">
+  <ul class="events" *ngFor="let actualEvent of events">
+    <li class="actualevent" id="event-title">
       <a routerLink="/event/show/{{ actualEvent.id }}">
         {{ actualEvent.title }}
       </a>

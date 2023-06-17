@@ -1,0 +1,61 @@
+body {
+  background-color: #dbe3de;
+}
+
+h1.event {
+font-family: Elephant;
+font-size: 160px;
+color: #303845;
+margin-top: 20px;
+margin-left: 50px;
+}
+
+ul.start {
+  font-family: Helvetica;
+  font-size: 20px;
+  color: #303845;
+  text-align: right;
+  margin-top: -52px;
+
+}
+
+li {
+  display: inline-block;
+  margin-right: 20px;
+  text-align: right;
+  text-decoration: none;
+}
+
+
+hr {
+  size: 1px;
+  margin-top: -130px;
+}
+
+h1.title {
+  font-family: Elephant;
+  color: #303845;
+  margin-top: 50px;
+margin-left: 50px;
+font-size: 70px;
+margin-bottom: 30px;
+}
+
+p {
+  font-family: Helvetica;
+  margin-left: 50px;
+  margin-top: -10px;
+  color: #303845;
+}
+
+ul.buttons {
+  margin-left: 50px;
+  font-family: Helvetica;
+  color: #303845;
+}
+
+button {
+  font-size: 17px;
+ font-family: Helvetica;
+ color: #303845;
+}

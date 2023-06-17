@@ -15,4 +15,20 @@
 <!--if not -> redirect to login page/register-->
   <button id="default-button">Attend</button>
   <a routerLink="/events" id="go-back-button">Back</a>
+<a routerLink="/comment/add/{{ event.id }}">Add comment</a>
+
+</div>
+
+<div class="comments">
+  <div *ngFor="let comment of comments">
+    <li id="username">
+        {{ comment.username }}
+    </li>
+    <li>{{ comment.publishingDate }}</li>
+    <li id="message">
+      {{ comment.message }}
+    </li>
+
+  </div>
+
 </div>

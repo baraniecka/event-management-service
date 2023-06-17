@@ -26,4 +26,12 @@ export class EventsService {
   public addEvent(event: EventData): Observable<EventData> {
     return this.httpClient.post<Event>(`${this.url}/event`, event, this.httpOptions);
   }
+
+  public getComments(id:number):Observable<any> {
+    return this.httpClient.get<Comment[]>(`${this.url}/comment/event/${id}`)
+  }
+
+  public addComment(comment:Comment){
+
+  }
 }

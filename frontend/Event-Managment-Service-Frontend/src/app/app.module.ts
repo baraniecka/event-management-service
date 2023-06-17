@@ -10,7 +10,9 @@ import { SingleEventComponent } from './single-event/single-event.component';
 import { CreateEventComponent } from './create-event/create-event.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { CommentComponent } from './comment/comment.component';
 import { ViewForLoggedUserComponent } from './view-for-logged-user/view-for-logged-user.component';
+
 // import { LoginComponent } from './login/login.component';
 
 @NgModule({
@@ -21,7 +23,9 @@ import { ViewForLoggedUserComponent } from './view-for-logged-user/view-for-logg
     CreateEventComponent,
     LoginComponent,
     RegisterComponent,
+    CommentComponent,
     ViewForLoggedUserComponent,
+
     // LoginComponent
   ],
   imports: [

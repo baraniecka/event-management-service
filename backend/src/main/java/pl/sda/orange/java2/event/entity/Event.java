@@ -42,6 +42,9 @@ public class Event {
     @ManyToMany(mappedBy = "userEvents", fetch = FetchType.LAZY)
     private Set<User> attendees;
 
+    @OneToMany(mappedBy = "event", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    private Set<Comment> comments;
+
 
     public Event(String title, LocalDate startDate, LocalDate endDate, String description) {
         this.title = title;

@@ -1,7 +1,10 @@
+body {
+  background-color: #dbe3de;
+}
 ul {
   list-style: none;
   padding: 0;
-  width: 400px;
+  /*width: 400px; */
 }
 
 .event-description {
@@ -30,3 +33,12 @@ ul {
 #go-back-button {
   margin-right: 10px;
 }
+
+a {
+  text-decoration: none;
+  color: #303845;
+}
+
+a:hover {
+ text-decoration: underline;
+  }

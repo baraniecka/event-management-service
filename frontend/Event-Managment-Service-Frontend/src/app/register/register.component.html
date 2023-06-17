@@ -1,59 +1,68 @@
 <h1><a routerLink="/events" id="homepage">EVENTS</a></h1>
+<hr>
 
-<form #registration="ngForm" (ngSubmit)="onClickSubmit(registration.value)">
-  {{message}}
 
-  <div class="form-group">
+<ul class="layer">
+  <li class="layer">
+  <a routerLink="/login">Login</a>
+</li>
+<li class="layer">
+  <a routerLink="/register">Sign up</a>
+</li>
+</ul>
 
-    <label for="username">Username:</label>
 
-    <input type="text" id="username" required maxlength="50" placeholder="Username"
-           [(ngModel)]="newUser.username" name="username">
-
-    <div *ngIf="registration.controls['username'].invalid
-    && (registration.controls['username'].dirty || registration.controls['username'].touched)">
-      <div *ngIf="registration.controls['username'].errors?.['required']">Username is required *</div>
-      <div *ngIf="registration.controls['username'].errors?.['maxlength']">Username has to be 50 characters max *</div>
+<form #registration = "ngForm" (ngSubmit) = "onClickSubmit(registration.value)">
+  <ul class="register">
+    <li class="username">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required maxlength="50"
+      placeholder="Username" ngModel/>
+       <div *ngIf="registration.controls['email'].invalid &&
+     (registration.controls['email'].dirty || registration.controls['email'].touched)">
+      <div *ngIf="registration.controls['email'].errors?.['required']">Email is required *</div>
+      <div *ngIf="registration.controls['email'].errors?.['email']">Invalid email address.</div>
     </div>
-  </div>
 
-  <div class="form-group">
+<!--      <div *ngIf="username.invalid && (username.dirty || username.touched)"-->
+<!--      class="alert">-->
 
-    <label for="email">E-mail:</label>
-    <input type="email" id="email" placeholder="E-mail" required name="email"/>
+<!--      <div *ngIf="user.username.errors?.['required']">Username is required *</div>-->
 
-    <div *ngIf="registration.controls['email'].invalid &&
+<!--      <div *ngIf="name.errors?.['required']">Username is required *</div>-->
+<!--      </div>-->
+    </li>
+    <li class="e-mail">
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" placeholder="Email" required ngModel/>
+         <div *ngIf="registration.controls['email'].invalid &&
      (registration.controls['email'].dirty || registration.controls['email'].touched)">
       <div *ngIf="registration.controls['email'].errors?.['required']">Email is required *</div>
       <div *ngIf="registration.controls['email'].errors?.['email']">Invalid email address.</div>
     </div>
   </div>
-
-  <div class="form-group">
-
-    <label for="password">Password:</label>
-    <input type="password" id="password" placeholder="password" required minlength="8" maxlength="30" name="password"/>
-
-    <div *ngIf="registration.controls['password'].invalid &&
-     (registration.controls['password'].dirty || registration.controls['password'].touched)">
-      <div *ngIf="registration.controls['password'].errors?.['required']">Password is required *</div>
-      <div *ngIf="registration.controls['password'].errors?.['minlength']">Password too short (8 characters min) *</div>
-      <div *ngIf="registration.controls['password'].errors?.['maxlength']">Password too long (30 characters max) *</div>
-    </div>
-  </div>
-
-<!--  <div class="form-group">-->
-
-<!--    <label for="confirmPassword">Confirm password:</label>-->
-
-<!--    <input type="password" id="confirmPassword" placeholder="Confirm" required />-->
-<!--    <div *ngIf="registration.controls['confirmPassword'].invalid &&-->
+    </li>
+    <li class="password">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Password" required minlength="8" maxlength="30" ngModel/>
+      <div *ngIf="registration.controls['confirmPassword'].invalid &&-->
 <!--     (registration.controls['password'].dirty || registration.controls['password'].touched)">-->
 <!--      <div *ngIf="registration.controls['password'].errors?.['required']">Password is required *</div>-->
 <!--    </div>-->
-<!--  </div>-->
+    </li>
+    <li class="repeatpassword">
+      <label for="repeatPassword">Confirm password</label>
+      <input type="password" id="repeatPassword" name="repeatPassword" placeholder="Confirm password"/>
+    </li>
 
-  <input type="submit" value="Register"/>
+    <li class="submit">
+      <input type="submit" value="Register" />
+    </li>
+  </ul>
+
+  <div class="back">
+<button (click)="back()">Back</button>
+</div>
 
 </form>
 <button (click)="back()">Back</button>

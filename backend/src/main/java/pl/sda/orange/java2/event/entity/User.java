@@ -33,6 +33,7 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     private Role role = Role.REGULAR_USER;
+    //private List<Role> role;
 
     @OneToMany(mappedBy = "host", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     private Set<Event> hostedEvents;
@@ -61,6 +62,7 @@ public class User {
         this.email = email;
         this.password = password;
         this.username = username;
+        this.role = role;
     }
 
     public User(String email, String password, String username) {

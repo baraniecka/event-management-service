@@ -1,7 +1,9 @@
 import {Component} from '@angular/core';
 import {Location} from "@angular/common";
 import {UserService} from "../service/user.service";
-import {User, UserData} from "../model/user";
+import {UserData} from "../model/user";
+import {NgForm} from "@angular/forms";
+
 
 @Component({
   selector: 'app-register',
@@ -9,7 +11,9 @@ import {User, UserData} from "../model/user";
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
-  user: UserData = {username: "", password: "", email: ""};
+  newUser: UserData = {} as UserData;
+  submitted = false;
+  message: string;
 
   constructor(private location: Location,
               private service: UserService) {
@@ -19,13 +23,18 @@ export class RegisterComponent {
     this.location.back()
   }
 
-  onClickSubmit(data) {
-    const {username, password, repeatPassword, email} = data;
-    // alert(JSON.stringify(data));
-    // if (password == repeatPassword) {
-      this.service.addUser({username, email, password} as UserData)
+  onClickSubmit(form: NgForm) {
+
+    if (form.valid) {
+
+      this.service.addUser(this.newUser)
         .subscribe();
-    // }
+      this.submitted = true;
+
+    } else {
+      this.message = "Data is not valid";
+    }
+
   }
 
 }

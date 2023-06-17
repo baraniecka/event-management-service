@@ -10,6 +10,7 @@ import pl.sda.orange.java2.event.entity.Event;
 import pl.sda.orange.java2.event.entity.User;
 import pl.sda.orange.java2.event.exception.EventAlreadyExistsException;
 import pl.sda.orange.java2.event.exception.NoSuchEventException;
+import pl.sda.orange.java2.event.exception.NoUserFoundException;
 import pl.sda.orange.java2.event.repository.EventRepository;
 import pl.sda.orange.java2.event.repository.UserRepository;
 
@@ -34,6 +35,7 @@ public class EventService {
                     .status(404)
                     .build();
         }
+
         return ResponseEntity
                 .status(200)
                 .body(events.stream()
@@ -74,8 +76,15 @@ public class EventService {
             throw new EventAlreadyExistsException("Event already exists");
         }
 
-        User host = userRepository.getAdmin();
+        User host = userRepository
+                .getAdmin()
+                .orElseThrow(() -> new NoUserFoundException("Admin not found"));
+
         eventDto.setHost(host);
+
+        //TODO: Add method for updating list of roles
+        //userRepository -> addRole(String username/email){
+        // getRole.add("Role.EVENT_HOST")}
 
         return ResponseEntity
                 .status(201)

@@ -6,7 +6,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ControllerAdvice
 
@@ -46,8 +45,8 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(BindException.class)
-    public ResponseEntity<ValidationErrors> handleBindException(BindException ex){
-        BindingResult bindingResult = ex.getBindingResult();
+    public ResponseEntity<ValidationErrors> handleBindException(BindException e){
+        BindingResult bindingResult = e.getBindingResult();
         var validationErrors = ValidationErrors.builder();
 
         for (FieldError fieldError : bindingResult.getFieldErrors()) {
@@ -69,4 +68,13 @@ public class GlobalExceptionHandler {
                 .body(errorDto);
     }
 
+    @ExceptionHandler(CommentNotFoundException.class)
+    public ResponseEntity handleCommentNotFound(CommentNotFoundException e){
+        ErrorDto errorDto = new ErrorDto();
+        errorDto.setMessage(e.getMessage());
+
+        return ResponseEntity
+                .status(404)
+                .body(errorDto);
+    }
 }

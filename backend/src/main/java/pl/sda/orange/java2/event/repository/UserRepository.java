@@ -26,7 +26,7 @@ public class UserRepository {
 
     }
 
-    public User getAdmin() {
+    public Optional<User> getAdmin() {
         return repository.findUserByUsername("admin");
     }
 }

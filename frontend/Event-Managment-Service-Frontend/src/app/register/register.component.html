@@ -1,8 +1,22 @@
 <h1><a routerLink="/events" id="homepage">EVENTS</a></h1>
+
+<hr>
+
+
+<ul class="layer">
+  <li class="layer">
+  <a routerLink="/login">Login</a>
+</li>
+<li class="layer">
+  <a routerLink="/register">Sign up</a>
+</li>
+</ul>
+
+
 <form #registration = "ngForm" (ngSubmit) = "onClickSubmit(registration.value)">
-  <ul>
-    <li>
-      <label for="username">Username:</label>
+  <ul class="register">
+    <li class="username">
+      <label for="username">username</label>
       <input type="text" id="username" name="username" required maxlength="50"
       placeholder="username" ngModel/>
 
@@ -14,23 +28,25 @@
 <!--      <div *ngIf="name.errors?.['required']">Username is required *</div>-->
 <!--      </div>-->
     </li>
-    <li>
-      <label for="email">E-mail:</label>
+    <li class="e-mail">
+      <label for="email">e-mail</label>
       <input type="email" id="email" name="email" placeholder="email" required ngModel/>
     </li>
-    <li>
-      <label for="password">Password:</label>
+    <li class="password">
+      <label for="password">password</label>
       <input type="password" id="password" name="password" placeholder="password" required minlength="8" maxlength="30" ngModel/>
     </li>
-    <li>
-      <label for="repeatPassword">Repeat password:</label>
+    <li class="repeatpassword">
+      <label for="repeatPassword">repeat password</label>
       <input type="password" id="repeatPassword" name="repeatPassword" placeholder="repeat password"/>
     </li>
-    <li>
+    <li class="submit">
       <input type="submit" value="Register" />
     </li>
   </ul>
 
-
+  <div class="back">
 <button (click)="back()">Back</button>
+</div>
+
 </form>

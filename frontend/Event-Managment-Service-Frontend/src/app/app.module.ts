@@ -10,6 +10,7 @@ import { SingleEventComponent } from './single-event/single-event.component';
 import { CreateEventComponent } from './create-event/create-event.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { CommentComponent } from './comment/comment.component';
 // import { LoginComponent } from './login/login.component';
 
 @NgModule({
@@ -20,6 +21,7 @@ import { RegisterComponent } from './register/register.component';
     CreateEventComponent,
     LoginComponent,
     RegisterComponent,
+    CommentComponent,
     // LoginComponent
   ],
   imports: [

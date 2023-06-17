@@ -1,7 +1,8 @@
-import { ActivatedRoute, Router } from '@angular/router';
-import { EventsService } from '../service/events.service';
-import { Component, OnInit } from '@angular/core';
-import { Event } from '../model/event';
+import {ActivatedRoute, Router} from '@angular/router';
+import {EventsService} from '../service/events.service';
+import {Component, OnInit} from '@angular/core';
+import {Event} from '../model/event';
+import {Comment} from '../model/comment';
 
 @Component({
   selector: 'app-single-event',
@@ -10,12 +11,13 @@ import { Event } from '../model/event';
 })
 export class SingleEventComponent implements OnInit {
   event: Event;
+  comments: Comment[];
 
   constructor(
     private eventsService: EventsService,
     private route: ActivatedRoute,
-    private router: Router
-  ) {}
+  ) {
+  }
 
   getEvent(): void {
     const id: number = Number(this.route.snapshot.paramMap.get('id'));
@@ -25,7 +27,16 @@ export class SingleEventComponent implements OnInit {
       .subscribe((event) => (this.event = event));
   }
 
+  getComment(): void {
+    const id: number = Number(this.route.snapshot.paramMap.get('id'));
+
+    this.eventsService
+      .getComments(id)
+      .subscribe((comments) => (this.comments = comments));
+  }
+
   public ngOnInit(): void {
     this.getEvent();
+    this.getComment();
   }
 }

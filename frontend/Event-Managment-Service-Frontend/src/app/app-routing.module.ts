@@ -5,6 +5,7 @@ import { SingleEventComponent } from './single-event/single-event.component';
 import { CreateEventComponent } from './create-event/create-event.component';
 import {RegisterComponent} from "./register/register.component";
 import {LoginComponent} from "./login/login.component";
+import {CommentComponent} from "./comment/comment.component";
 
 const routes: Routes = [
   { path: 'events', component: EventsComponent },
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'event/show/:id', component: SingleEventComponent },
   { path: 'event/add', component: CreateEventComponent },
   {path: 'register', component: RegisterComponent},
-  {path: 'login', component: LoginComponent}
+  {path: 'login', component: LoginComponent},
+  {path: 'comment/add/:id', component: CommentComponent}
 ];
 
 @NgModule({

@@ -35,7 +35,7 @@ public class Event {
     @Length(min = 20)
     private String description;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "host_id")
     private User host;
 

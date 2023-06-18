@@ -1,4 +1,19 @@
-<h1><a routerLink="/events" id="homepage">EVENTS</a></h1>
+<h1><a routerLink="/events/logged">EVENTS</a></h1>
+<hr>
+<ul class="start">
+  <li class="username">
+    Hello, user!
+  </li>
+  <li class="myevents">
+    <a routerLink="/events/logged">my events</a>
+  </li>
+  <li class="createevents">
+    <a routerLink="/event/add">create event</a>
+  </li>
+  <li class="logout">
+    <a routerLink="/events">log out</a>
+  </li>
+</ul>
 <form>
 <!--<form #newevent = "ngForm" (ngSubmit) = "onClickSubmit(registration.value)">-->
   <label for="title">Title</label>

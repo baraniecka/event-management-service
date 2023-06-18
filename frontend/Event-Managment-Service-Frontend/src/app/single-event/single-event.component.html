@@ -1,7 +1,7 @@
 <h1 class="event"><a routerLink="/events" id="homepage">EVENTS</a></h1>
 <hr>
 
-<ul class="start">
+<!--<ul class="start">
   <li class="username">
   <a routerLink="/login">USERNAME</a>
 </li>
@@ -14,7 +14,7 @@
 <li class="logout">
  <a routerLink="/events">LOG OUT</a>
 </li>
-</ul>
+</ul>-->
 
 
 <div id="single-event">
@@ -31,12 +31,14 @@
   <button id="default-button">Attend</button>
 </li>
 <li>
-  <a routerLink="/events/logged" id="go-back-button">Back</a>
+  <button id="default-button" routerLink="/events/logged" id="go-back-button">Back</button>
 </li>
 <li>
-<a routerLink="/comment/add/{{ event.id }}">Add comment</a>
+<button id="default-button" routerLink="/comment/add/{{ event.id }}">Add comment</button>
 </li>
 </ul>
+
+
 
 <div class="comments">
   <div *ngFor="let comment of comments">

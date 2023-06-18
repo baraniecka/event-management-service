@@ -34,7 +34,7 @@ h1 {
   ul.register {
     color: #303845;
     font-family: Elephant;
-    font-size: 32px;
+    font-size: 25px;
     text-align: center;
     margin-top: 150px;
   }
@@ -63,8 +63,15 @@ h1 {
       }
 
       div.back {
-        margin-top: 150px;
+        margin-top: 14px;
         font-size: 17px;
+      font-family: Helvetica;
+      text-align: center;
+      }
+
+      div.login {
+        margin-top: 100px;
+        font-size: 20px;
       font-family: Helvetica;
       text-align: center;
       }

@@ -31,7 +31,12 @@ export class EventsService {
     return this.httpClient.get<Comment[]>(`${this.url}/comment/event/${id}`)
   }
 
-  public addComment(comment:Comment){
-
+  public addComment(comment:Comment):Observable<Comment>{
+return this.httpClient.post<Comment>(`${this.url}/comment/new`, comment, this.httpOptions)
   }
+
+  public getEventsByPhrase(phrase:string):Observable<any>{
+    return this.httpClient.get<Event>(`${this.url}/event/search/${phrase}`)
+  }
+
 }

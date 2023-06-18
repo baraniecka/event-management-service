@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, from } from 'rxjs';
 import {Event, EventData} from '../model/event';
+import {Comment, CommentData} from '../model/comment';
 
 @Injectable({
   providedIn: 'root',
@@ -31,7 +32,12 @@ export class EventsService {
     return this.httpClient.get<Comment[]>(`${this.url}/comment/event/${id}`)
   }
 
-  public addComment(comment:Comment){
-
+  public addComment(comment:CommentData):Observable<Comment>{
+return this.httpClient.post<Comment>(`${this.url}/comment/new`, comment, this.httpOptions)
   }
+
+  public getEventsByPhrase(phrase:string):Observable<any>{
+    return this.httpClient.get<Event>(`${this.url}/event/search/${phrase}`)
+  }
+
 }

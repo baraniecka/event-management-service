@@ -12,7 +12,6 @@ export class CreateEventComponent {
   constructor(private eventService: EventsService,
               private location: Location) {}
 
-  // event: Event;
 
   addEvent(title: string, start: Date, end: Date, desc: string): void {
     title.trim;

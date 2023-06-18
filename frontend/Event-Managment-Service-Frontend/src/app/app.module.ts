@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { CommentComponent } from './comment/comment.component';
 import { ViewForLoggedUserComponent } from './view-for-logged-user/view-for-logged-user.component';
+import { EventSearchComponent } from './event-search/event-search.component';
 
 // import { LoginComponent } from './login/login.component';
 
@@ -25,6 +26,7 @@ import { ViewForLoggedUserComponent } from './view-for-logged-user/view-for-logg
     RegisterComponent,
     CommentComponent,
     ViewForLoggedUserComponent,
+    EventSearchComponent,
 
     // LoginComponent
   ],

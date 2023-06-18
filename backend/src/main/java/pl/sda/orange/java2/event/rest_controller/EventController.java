@@ -17,8 +17,6 @@ public class EventController {
 
     private final EventService eventService;
 
-
-
     @GetMapping(path = "/events")
     public ResponseEntity<List<EventDto>> getAllActualEvents() {
         return eventService.getAllActualEvents();
@@ -33,5 +31,11 @@ public class EventController {
     public ResponseEntity<EventDto> addEvent(@RequestBody EventDto eventDto) {
 
         return eventService.addEvent(eventDto);
+    }
+
+    @GetMapping(path = "/event/search/{phrase}")
+    public ResponseEntity<List<EventDto>> findEventsByPhraseInTitle(@PathVariable String phrase){
+
+        return eventService.findEventsByPhraseInTitle(phrase);
     }
 }

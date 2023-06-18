@@ -16,4 +16,6 @@ public interface IEventRepository extends JpaRepository<Event, Long> {
 
     Optional<Event> findEventByTitleAndStartDate(String title, LocalDate start);
 
+    @Query(value = "FROM Event e WHERE e.title LIKE %:phrase%")
+    List<Event> findEventsByTitle(@Param("phrase") String phrase);
 }

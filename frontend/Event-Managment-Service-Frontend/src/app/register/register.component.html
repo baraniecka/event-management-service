@@ -14,15 +14,16 @@
 
 <form #registration = "ngForm" (ngSubmit) = "onClickSubmit(registration.value)">
   <ul class="register">
+    <li>{{message}}</li>
     <li class="username">
       <label for="username">username</label>
       <input type="text" id="username" name="username" required maxlength="50"
-      placeholder="Username" ngModel/>
-       <div *ngIf="registration.controls['email'].invalid &&
-     (registration.controls['email'].dirty || registration.controls['email'].touched)">
-      <div *ngIf="registration.controls['email'].errors?.['required']">Email is required *</div>
-      <div *ngIf="registration.controls['email'].errors?.['email']">Invalid email address.</div>
-    </div>
+      placeholder="Username"/>
+<!--       <div *ngIf="registration.controls['email'].invalid &&-->
+<!--     (registration.controls['email'].dirty || registration.controls['email'].touched)">-->
+<!--      <div *ngIf="registration.controls['email'].errors?.['required']">Email is required *</div>-->
+<!--      <div *ngIf="registration.controls['email'].errors?.['email']">Invalid email address.</div>-->
+<!--    </div>-->
 
 <!--      <div *ngIf="username.invalid && (username.dirty || username.touched)"-->
 <!--      class="alert">-->
@@ -33,27 +34,28 @@
 <!--      </div>-->
     </li>
     <li class="e-mail">
-      <label for="email">e-mail</label>
-      <input type="email" id="email" name="email" placeholder="Email" required ngModel/>
-         <div *ngIf="registration.controls['email'].invalid &&
-     (registration.controls['email'].dirty || registration.controls['email'].touched)">
-      <div *ngIf="registration.controls['email'].errors?.['required']">Email is required *</div>
-      <div *ngIf="registration.controls['email'].errors?.['email']">Invalid email address.</div>
-    </div>
 
-    </li>
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" placeholder="Email" required/>
+<!--         <div *ngIf="registration.controls['email'].invalid &&-->
+<!--     (registration.controls['email'].dirty || registration.controls['email'].touched)">-->
+<!--      <div *ngIf="registration.controls['email'].errors?.['required']">Email is required *</div>-->
+<!--      <div *ngIf="registration.controls['email'].errors?.['email']">Invalid email address.</div>-->
+<!--    </div>-->
+
+<!--    </li>-->
     <li class="password">
-      <label for="password">password</label>
+      <label for="password">Password</label>
       <input type="password" id="password" name="password" placeholder="Password" required minlength="8" maxlength="30" ngModel/>
-   <!--   <div *ngIf="registration.controls['confirmPassword'].invalid &&-->
-<!--     (registration.controls['password'].dirty || registration.controls['password'].touched)">-->
+<!--      <div *ngIf="registration.controls['confirmPassword'].invalid && (registration.controls['password'].dirty || registration.controls['password'].touched)">-->
 <!--      <div *ngIf="registration.controls['password'].errors?.['required']">Password is required *</div>-->
 <!--    </div>-->
     </li>
-    <li class="repeatpassword">
-      <label for="repeatPassword">confirm password</label>
-      <input type="password" id="repeatPassword" name="repeatPassword" placeholder="Confirm password"/>
-    </li>
+
+<!--    <li class="repeatpassword">-->
+<!--      <label for="repeatPassword">confirm password</label>-->
+<!--      <input type="password" id="repeatPassword" name="repeatPassword" placeholder="Confirm password"/>-->
+<!--    </li>-->
 
     <li class="submit">
       <input type="submit" value="Register" />

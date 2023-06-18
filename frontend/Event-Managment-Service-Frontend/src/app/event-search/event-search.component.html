@@ -1,0 +1,12 @@
+
+<ul *ngFor="let foundEvent of events">
+  <li id="event-title">
+    <a routerLink="/event/show/{{ foundEvent.id }}">
+      {{ foundEvent.title }}
+    </a>
+  </li>
+  <li>{{ foundEvent.startDate }} - {{ foundEvent.endDate }}</li>
+  <li class="event-description" id="event-desc-short">
+    {{ foundEvent.description }}
+  </li>
+</ul>

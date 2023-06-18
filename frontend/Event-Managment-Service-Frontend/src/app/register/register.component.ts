@@ -25,15 +25,15 @@ export class RegisterComponent {
 
   onClickSubmit(form: NgForm) {
 
-    if (form.valid) {
-
+    // if (form.valid) {
+      this.newUser = form.value;
       this.service.addUser(this.newUser)
         .subscribe();
       this.submitted = true;
 
-    } else {
-      this.message = "Data is not valid";
-    }
+    // } else {
+    //   this.message = "Data is not valid";
+    // }
 
   }
 

@@ -1,1 +1,31 @@
-<p>view-for-logged-user works!</p>
+<body>
+  <h1>EVENTS</h1>
+  <hr>
+ <ul class="start">
+   <li class="username">
+   <a routerLink="/login">username</a>
+ </li>
+ <li class="myevents">
+   <a routerLink="/register">my events</a>
+ </li>
+ <li class="createevents">
+  <a routerLink="/register">create event</a>
+</li>
+<li class="logout">
+  <a routerLink="/events">log out</a>
+</li>
+ </ul>
+
+
+   <ul class="events" *ngFor="let actualEvent of events">
+     <li class="actualevent" id="event-title">
+       <a routerLink="/event/show/{{ actualEvent.id }}">
+         {{ actualEvent.title }}
+       </a>
+     </li>
+     <li>{{ actualEvent.startDate }} - {{ actualEvent.endDate }}</li>
+     <li class="event-description" id="event-desc-short">
+       {{ actualEvent.description }}
+     </li>
+   </ul>
+ </body>

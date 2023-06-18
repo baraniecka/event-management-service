@@ -6,6 +6,7 @@ import { CreateEventComponent } from './create-event/create-event.component';
 import {RegisterComponent} from "./register/register.component";
 import {LoginComponent} from "./login/login.component";
 import {CommentComponent} from "./comment/comment.component";
+import { ViewForLoggedUserComponent} from './view-for-logged-user/view-for-logged-user.component'
 
 const routes: Routes = [
   { path: 'events', component: EventsComponent },
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'event/add', component: CreateEventComponent },
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'comment/add/:id', component: CommentComponent}
+  {path: 'comment/add/:id', component: CommentComponent},
+  {path: 'events/logged', component: ViewForLoggedUserComponent}
 ];
 
 @NgModule({

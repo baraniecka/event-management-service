@@ -32,4 +32,8 @@ public class EventRepository {
         return repository.findEventByTitleAndStartDate(title, start);
     }
 
+
+    public List<Event> findEventsByTitle(String phrase) {
+        return repository.findEventsByTitle(phrase);
+    }
 }

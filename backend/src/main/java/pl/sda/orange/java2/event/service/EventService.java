@@ -14,8 +14,7 @@ import pl.sda.orange.java2.event.exception.NoUserFoundException;
 import pl.sda.orange.java2.event.repository.EventRepository;
 import pl.sda.orange.java2.event.repository.UserRepository;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -90,5 +89,30 @@ public class EventService {
                 .status(201)
                 .body(EventDtoMapper.mapToEventDto
                         (eventRepository.addEvent(EventDtoMapper.mapToEvent(eventDto))));
+    }
+
+    public ResponseEntity<List<EventDto>> findEventsByPhraseInTitle(String phrase) {
+
+        List<Event> foundEvents = new ArrayList<>();
+
+        List<String> phrasesToFind = Arrays.asList(phrase
+                .trim()
+                .replaceAll("\\p{Punct}", "")
+                .split(" "));
+
+       for(String find : phrasesToFind){
+           foundEvents.addAll(eventRepository.findEventsByTitle(find));
+       }
+
+       if (foundEvents.isEmpty()){
+           throw new NoSuchEventException("No events with provided phrase found");
+       }
+
+        return ResponseEntity
+                .status(200)
+                .body(foundEvents
+                        .stream()
+                        .map(event -> EventDtoMapper.mapToEventDto(event))
+                        .collect(Collectors.toList()));
     }
 }
